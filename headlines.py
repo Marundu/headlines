@@ -25,8 +25,8 @@ RSS_FEEDS = {'bbc': 'http://feeds.bbci.co.uk/news/rss.xml',
              'vox': 'http://www.vox.com/rss/index.xml',
              'openculture': 'http://www.openculture.com/feed'}
 
-WEATHER_URL = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=<YOUR_OPENWEATHERMAP_API_KEY_HERE>'
-CURRENCY_URL = 'https://openexchangerates.org/api/latest.json?app_id=<YOUR_OPENEXCHANGERATES_API_KEY_HERE>'
+WEATHER_URL = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=62b8bd5ad99b7f38bc9be259871bf155'
+CURRENCY_URL = 'https://openexchangerates.org/api/latest.json?app_id=6a99b61a553c437daf7f4795c973aec9'
 
 DEFAULTS = {'publication': 'bbc',
             'city': 'Nairobi, KE',
