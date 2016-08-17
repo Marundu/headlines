@@ -23,7 +23,8 @@ RSS_FEEDS = {'bbc': 'http://feeds.bbci.co.uk/news/rss.xml',
              'the_est': 'http://www.theestablishment.co/feed/',
              'sethgodin': 'http://feeds.feedblitz.com/sethsblog&x=1',
              'vox': 'http://www.vox.com/rss/index.xml',
-             'openculture': 'http://www.openculture.com/feed'}
+             'openculture': 'http://www.openculture.com/feed',
+             'zenhabits': 'http://feeds.feedburner.com/zenhabits'}
 
 WEATHER_URL = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=62b8bd5ad99b7f38bc9be259871bf155'
 CURRENCY_URL = 'https://openexchangerates.org/api/latest.json?app_id=6a99b61a553c437daf7f4795c973aec9'
