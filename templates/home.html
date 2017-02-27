@@ -1,36 +1,20 @@
 <html>
-  <head>
+<head>
+
   <title>Headlines</title>
-
-  <!-- Google Fonts -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-
-  <!-- CSS Reset -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-
-  <!-- Milligram CSS minified -->
-  <link rel="stylesheet" href="../static/milligram/dist/milligram.min.css">
-    
-
-    <style>
-      body {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-      #header {
-        padding-top: 5;
-      }
-      #inner-header {
-        padding-left: 10;
-      }
-      #main {
-        padding-left: 10;
-      }
-    </style>
-
-  </head>
+  <link rel="stylesheet" href="../static/css/milligram/dist/milligram.min.css">
   
-  <body>
+  <!-- Layout Improvements -->
+  <link rel="stylesheet" href="../static/css/override.css">
+  
+</head>
+
+<body>
   <div id="header">
     <div id="inner-header">
       <h1>Headlines</h1>
@@ -41,51 +25,53 @@
   
   <div id="main">
 
-  <h2>Current Weather</h2>
-  <p>City: <b>{{weather.city}}, {{weather.country}}</b></p>
-  <p>{{weather.description}} | {{weather.temperature}}&#8451;</p>
-  <form>
-    <input type="text" name="city" placeholder="Weather Search">
-    <input type="submit" value="Submit">
-  </form>
-  
-  <h2>Currency</h2>
-  <form>
-  from: <select name="currency_from">
-        {% for currency in currencies %}
-          <option value="{{currency}}" {{'selected="selected"' if currency_from==currency}}>{{currency}}</option>
-        {% endfor %}
-    </select>
-  
-  to: <select name="currency_to">
+    <h2>Current Weather</h2>
+    <p>City: <b>{{weather.city}}, {{weather.country}}</b></p>
+    <p>{{weather.description}} | {{weather.temperature}}&#8451;</p>
+    <form>
+      <input type="text" name="city" placeholder="Weather Search">
+      <input type="submit" value="Submit">
+    </form>
+
+    <h2>Currency</h2>
+    
+    <form>
+      from: <select name="currency_from">
       {% for currency in currencies %}
-        <option value="{{currency}}" {{'selected="selected"' if currency_to==currency}}>{{currency}}</option>
+      <option value="{{currency}}" {{'selected="selected"' if currency_from==currency}}>{{currency}}</option>
       {% endfor %}
     </select>
-    <input type="submit" value="Submit">
-  </form>
-  1 {{currency_from}} = {{currency_to}} {{rate}}
-  
-  <h2>Headlines</h2>
 
-  <form>
-    <input type="text" name="publication" placeholder="search">
-    <input type="submit" value="Submit">
-  </form>
+    to: <select name="currency_to">
+    {% for currency in currencies %}
+    <option value="{{currency}}" {{'selected="selected"' if currency_to==currency}}>{{currency}}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" value="Submit">
+</form>
 
-  {% for article in articles %}
-    <b><a href="{{article.link}}" target="_blank">{{article.title}}</a></b><br/>
-    <i>{{article.published}}</i><br/>
-    <p>{{article.summary}}</p>
-    <hr/>
-  {% endfor %}
+1 {{currency_from}} = {{currency_to}} {{rate}}
+
+<h2>Headlines</h2>
+
+<form>
+  <input type="text" name="publication" placeholder="search">
+  <input type="submit" value="Submit">
+</form>
+
+{% for article in articles %}
+<b><a href="{{article.link}}" target="_blank">{{article.title}}</a></b><br/>
+<i>{{article.published}}</i><br/>
+<p>{{article.summary}}</p>
+<hr/>
+{% endfor %}
 
   <!--<select name="article">
     {% for article in articles %}
   <option value="{{article}}" {{'selected="selected"' if article==article}}>{{article}}</option>
   </select>
-    {%endfor%}-->
+  {%endfor%}-->
 
-    </div>
-  </body>
+</div>
+</body>
 </html>
