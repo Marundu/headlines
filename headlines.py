@@ -1,9 +1,13 @@
 import datetime
 import feedparser
-from flask import Flask, render_template, request, make_response
 import json
 import urllib
 import urllib2
+
+from flask import Flask
+from flask import render_template
+from flask import request
+from flask import make_response
 
 app = Flask(__name__)
 
@@ -96,7 +100,6 @@ def get_weather(query):
                     'city': parsed['name'],
                     'country': parsed['sys']['country']}
     return weather
-
 
 if __name__ == '__main__':
     app.run(debug=True, port=7001)
