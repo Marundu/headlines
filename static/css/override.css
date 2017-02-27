@@ -1,0 +1,13 @@
+body {
+  max-width: 800px;
+  margin: 0 auto;
+}
+#header {
+  padding-top: 5;
+}
+#inner-header {
+  padding-left: 10;
+}
+#main {
+  padding-left: 10;
+}
